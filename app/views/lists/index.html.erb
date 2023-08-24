@@ -1,0 +1,25 @@
+<div class="banner">
+  <div class="container">
+    <h1>My Movie Watch Lists</h1>
+  </div>
+</div>
+
+<div class="container d-flex">
+  <div class="row">
+    <h2>My Lists</h2>
+    <% @lists.each do |list| %>
+      <div class="card-category">
+        <%= link_to list.name, list_path(list) %>
+        <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h3>Add a list</h3>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
