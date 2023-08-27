@@ -4,23 +4,26 @@
   </div>
 </div>
 
-
-<%# <div class="container d-flex">
-  <div class="row">
+<div class="container" id="homepage-lists">
+  <div class="lists">
     <h2>My Lists</h2>
-    <% @lists.each do |list| %>
-      <%# <div class="card-category">
-        <%= link_to list.name, list_path(list) %>
-        <%# <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <%# </div>
-    <% end %>
-  <%# </div> %>
+    <div class="cards">
+      <% @lists.each do |list| %>
+        <div class="a-card">
+          <%= link_to list.name, list_path(list) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-  <%# <div class="row">
-    <h3>Add a list</h3>
-    <%= simple_form_for(@list) do |f| %>
-      <%# <%= f.input :name %>
-      <%# <%= f.submit %>
-    <%# <% end %>
-  <%# </div> %>
-<%# </div> %>
+  <div class="new-form">
+      <h3>Add a list</h3>
+      <%= simple_form_for(@list) do |f| %>
+        <%= f.input :name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%# <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
