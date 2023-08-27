@@ -1,25 +1,26 @@
-<div class="banner">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://e1.pxfuel.com/desktop-wallpaper/202/900/desktop-wallpaper-best-50-movie-hq-film-aesthetic.jpg);">
   <div class="container">
     <h1>My Movie Watch Lists</h1>
   </div>
 </div>
 
-<div class="container d-flex">
+
+<%# <div class="container d-flex">
   <div class="row">
     <h2>My Lists</h2>
     <% @lists.each do |list| %>
-      <div class="card-category">
+      <%# <div class="card-category">
         <%= link_to list.name, list_path(list) %>
-        <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
+        <%# <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%# </div>
     <% end %>
-  </div>
+  <%# </div> %>
 
-  <div class="row">
+  <%# <div class="row">
     <h3>Add a list</h3>
     <%= simple_form_for(@list) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-</div>
+      <%# <%= f.input :name %>
+      <%# <%= f.submit %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
